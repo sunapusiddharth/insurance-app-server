@@ -1,0 +1,74 @@
+{
+  "insurance_type": "motor_bike",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "vehicle_registration_number",
+      "type": "text",
+      "label": "Bike Registration Number",
+      "placeholder": "KA05AB6789",
+      "mandatory": true,
+      "ui": { "order": 1, "depends_on": null }
+    },
+    {
+      "id": "make_model",
+      "type": "text",
+      "label": "Bike Make & Model",
+      "placeholder": "Eg: Royal Enfield Classic 350",
+      "mandatory": true,
+      "ui": { "order": 2, "depends_on": null }
+    },
+    {
+      "id": "rto_city",
+      "type": "select",
+      "label": "RTO City",
+      "options": [ /* same as car */ ],
+      "mandatory": true,
+      "ui": { "order": 3, "depends_on": null }
+    },
+    {
+      "id": "registration_year",
+      "type": "number",
+      "label": "Year of Registration",
+      "min": 2000,
+      "max": 2025,
+      "mandatory": true,
+      "ui": { "order": 4, "depends_on": null }
+    },
+    {
+      "id": "previous_claim",
+      "type": "radio",
+      "label": "Any claim last year?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 5, "depends_on": null }
+    },
+    {
+      "id": "ncb",
+      "type": "select",
+      "label": "No Claim Bonus %",
+      "options": [ /* same as car */ ],
+      "mandatory": true,
+      "ui": {
+        "order": 6,
+        "depends_on": { "question_id": "previous_claim", "value": ["no"] }
+      }
+    },
+    {
+      "id": "addons",
+      "type": "checkbox",
+      "label": "Add-ons",
+      "options": [
+        { "value": "zero_dep", "label": "Zero Depreciation" },
+        { "value": "rsa", "label": "Roadside Assistance" },
+        { "value": "helmet_cover", "label": "Helmet Cover" },
+        { "value": "pa_cover", "label": "Personal Accident Cover" }
+      ],
+      "mandatory": false,
+      "ui": { "order": 7, "depends_on": null }
+    }
+  ]
+}

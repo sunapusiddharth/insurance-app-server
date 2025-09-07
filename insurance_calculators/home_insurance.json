@@ -1,0 +1,95 @@
+{
+  "insurance_type": "home",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "property_type",
+      "type": "radio",
+      "label": "Property Type",
+      "options": [
+        { "value": "owned", "label": "Owned" },
+        { "value": "rented", "label": "Rented" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 1, "depends_on": null }
+    },
+    {
+      "id": "construction_type",
+      "type": "select",
+      "label": "Construction Type",
+      "options": [
+        { "value": "rc", "label": "Reinforced Concrete" },
+        { "value": "brick", "label": "Brick & Mortar" },
+        { "value": "wood", "label": "Wooden" },
+        { "value": "mixed", "label": "Mixed" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 2, "depends_on": null }
+    },
+    {
+      "id": "property_value",
+      "type": "number",
+      "label": "Estimated Property Value (₹)",
+      "min": 500000,
+      "max": 100000000,
+      "mandatory": true,
+      "ui": { "order": 3, "depends_on": null }
+    },
+    {
+      "id": "location",
+      "type": "select",
+      "label": "Location Risk",
+      "options": [
+        { "value": "low", "label": "Low Risk (Urban, Safe)" },
+        { "value": "medium", "label": "Medium Risk" },
+        { "value": "high", "label": "High Risk (Flood/Earthquake Zone)" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 4, "depends_on": null }
+    },
+    {
+      "id": "security",
+      "type": "checkbox",
+      "label": "Security Measures Installed",
+      "options": [
+        { "value": "cctv", "label": "CCTV" },
+        { "value": "alarm", "label": "Alarm System" },
+        { "value": "guard", "label": "Security Guard" },
+        { "value": "none", "label": "None" }
+      ],
+      "mandatory": false,
+      "ui": { "order": 5, "depends_on": null }
+    },
+    {
+      "id": "previous_claim",
+      "type": "radio",
+      "label": "Any previous home insurance claim?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 6, "depends_on": null }
+    },
+    {
+      "id": "contents_cover",
+      "type": "toggle",
+      "label": "Cover for Furniture & Electronics?",
+      "mandatory": false,
+      "ui": { "order": 7, "depends_on": null }
+    },
+    {
+      "id": "renters_liability",
+      "type": "toggle",
+      "label": "Include Liability Cover (for renters)?",
+      "mandatory": false,
+      "ui": {
+        "order": 8,
+        "depends_on": {
+          "question_id": "property_type",
+          "value": ["rented"]
+        }
+      }
+    }
+  ]
+}

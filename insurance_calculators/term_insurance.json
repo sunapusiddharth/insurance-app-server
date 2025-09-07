@@ -1,0 +1,115 @@
+{
+  "insurance_type": "term",
+  "version": "1.1",
+  "questions": [
+    {
+      "id": "age",
+      "type": "number",
+      "label": "Your Age",
+      "min": 18,
+      "max": 65,
+      "mandatory": true,
+      "ui": { "order": 1, "depends_on": null }
+    },
+    {
+      "id": "gender",
+      "type": "radio",
+      "label": "Gender",
+      "options": [
+        { "value": "male", "label": "Male" },
+        { "value": "female", "label": "Female" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 2, "depends_on": null }
+    },
+    {
+      "id": "annual_income",
+      "type": "number",
+      "label": "Annual Income (₹)",
+      "min": 100000,
+      "max": 50000000,
+      "mandatory": true,
+      "ui": { "order": 3, "depends_on": null }
+    },
+    {
+      "id": "coverage_amount",
+      "type": "select",
+      "label": "Desired Coverage Amount",
+      "options": [
+        { "value": "5000000", "label": "₹50 Lakh" },
+        { "value": "10000000", "label": "₹1 Crore" },
+        { "value": "20000000", "label": "₹2 Crore" },
+        { "value": "30000000", "label": "₹3 Crore" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 4, "depends_on": null }
+    },
+    {
+      "id": "policy_term",
+      "type": "select",
+      "label": "Policy Term (Years)",
+      "options": [
+        { "value": "10", "label": "10 Years" },
+        { "value": "20", "label": "20 Years" },
+        { "value": "25", "label": "25 Years" },
+        { "value": "30", "label": "30 Years" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 5, "depends_on": null }
+    },
+    {
+      "id": "smoker",
+      "type": "radio",
+      "label": "Do you smoke or consume tobacco?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 6, "depends_on": null }
+    },
+    {
+      "id": "alcohol",
+      "type": "radio",
+      "label": "Do you consume alcohol regularly?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "mandatory": false,
+      "ui": {
+        "order": 7,
+        "depends_on": {
+          "question_id": "smoker",
+          "value": ["yes"]
+        }
+      }
+    },
+    {
+      "id": "occupation_risk",
+      "type": "select",
+      "label": "Occupation Risk Level",
+      "options": [
+        { "value": "low", "label": "Office / Low Risk" },
+        { "value": "medium", "label": "Field / Medium Risk" },
+        { "value": "high", "label": "Adventure / High Risk" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 8, "depends_on": null }
+    },
+    {
+      "id": "critical_illness_rider",
+      "type": "toggle",
+      "label": "Add Critical Illness Rider?",
+      "mandatory": false,
+      "ui": { "order": 9, "depends_on": null }
+    },
+    {
+      "id": "accidental_death_rider",
+      "type": "toggle",
+      "label": "Add Accidental Death Benefit?",
+      "mandatory": false,
+      "ui": { "order": 10, "depends_on": null }
+    }
+  ]
+}

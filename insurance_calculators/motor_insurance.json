@@ -1,0 +1,113 @@
+{
+  "insurance_type": "motor_car",
+  "version": "1.2",
+  "questions": [
+    {
+      "id": "vehicle_registration_number",
+      "type": "text",
+      "label": "Vehicle Registration Number",
+      "placeholder": "MH01AB1234",
+      "mandatory": true,
+      "ui": { "order": 1, "depends_on": null }
+    },
+    {
+      "id": "make_model",
+      "type": "text",
+      "label": "Vehicle Make & Model",
+      "placeholder": "Eg: Hyundai Creta 2023",
+      "mandatory": true,
+      "ui": { "order": 2, "depends_on": null }
+    },
+    {
+      "id": "rto_city",
+      "type": "select",
+      "label": "RTO City",
+      "options": [
+        { "value": "delhi", "label": "Delhi" },
+        { "value": "mumbai", "label": "Mumbai" },
+        { "value": "bangalore", "label": "Bangalore" },
+        { "value": "chennai", "label": "Chennai" },
+        { "value": "kolkata", "label": "Kolkata" },
+        { "value": "hyderabad", "label": "Hyderabad" },
+        { "value": "other", "label": "Other" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 3, "depends_on": null }
+    },
+    {
+      "id": "registration_year",
+      "type": "number",
+      "label": "Year of Registration",
+      "min": 2000,
+      "max": 2025,
+      "mandatory": true,
+      "ui": { "order": 4, "depends_on": null }
+    },
+    {
+      "id": "previous_claim",
+      "type": "radio",
+      "label": "Any claim in last policy year?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 5, "depends_on": null }
+    },
+    {
+      "id": "ncb",
+      "type": "select",
+      "label": "No Claim Bonus (NCB) %",
+      "options": [
+        { "value": "0", "label": "0%" },
+        { "value": "20", "label": "20%" },
+        { "value": "25", "label": "25%" },
+        { "value": "35", "label": "35%" },
+        { "value": "45", "label": "45%" },
+        { "value": "50", "label": "50%" }
+      ],
+      "mandatory": true,
+      "ui": {
+        "order": 6,
+        "depends_on": {
+          "question_id": "previous_claim",
+          "value": ["no"]
+        }
+      }
+    },
+    {
+      "id": "idv",
+      "type": "number",
+      "label": "Insured Declared Value (IDV) - ₹",
+      "min": 100000,
+      "max": 10000000,
+      "mandatory": true,
+      "ui": { "order": 7, "depends_on": null }
+    },
+    {
+      "id": "addons",
+      "type": "checkbox",
+      "label": "Select Add-ons",
+      "options": [
+        { "value": "zero_dep", "label": "Zero Depreciation Cover" },
+        { "value": "engine_protect", "label": "Engine Protection" },
+        { "value": "ncb_protect", "label": "NCB Protection" },
+        { "value": "rsa", "label": "Roadside Assistance" },
+        { "value": "consumables", "label": "Consumables Cover" }
+      ],
+      "mandatory": false,
+      "ui": { "order": 8, "depends_on": null }
+    },
+    {
+      "id": "usage_type",
+      "type": "radio",
+      "label": "Usage Type",
+      "options": [
+        { "value": "personal", "label": "Personal Use" },
+        { "value": "commercial", "label": "Commercial Use" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 9, "depends_on": null }
+    }
+  ]
+}

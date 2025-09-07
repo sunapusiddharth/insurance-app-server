@@ -1,0 +1,88 @@
+{
+  "insurance_type": "travel",
+  "version": "1.1",
+  "questions": [
+    {
+      "id": "trip_type",
+      "type": "radio",
+      "label": "Trip Type",
+      "options": [
+        { "value": "international", "label": "International" },
+        { "value": "domestic", "label": "Domestic" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 1, "depends_on": null }
+    },
+    {
+      "id": "destination",
+      "type": "text",
+      "label": "Destination Country/City",
+      "placeholder": "Eg: Thailand, USA, Goa",
+      "mandatory": true,
+      "ui": { "order": 2, "depends_on": null }
+    },
+    {
+      "id": "trip_start",
+      "type": "date",
+      "label": "Trip Start Date",
+      "mandatory": true,
+      "ui": { "order": 3, "depends_on": null }
+    },
+    {
+      "id": "trip_end",
+      "type": "date",
+      "label": "Trip End Date",
+      "mandatory": true,
+      "ui": { "order": 4, "depends_on": null }
+    },
+    {
+      "id": "travellers",
+      "type": "number",
+      "label": "Number of Travellers",
+      "min": 1,
+      "max": 10,
+      "mandatory": true,
+      "ui": { "order": 5, "depends_on": null }
+    },
+    {
+      "id": "ages",
+      "type": "text",
+      "label": "Ages of Travellers (comma separated)",
+      "placeholder": "Eg: 28, 30, 5",
+      "mandatory": true,
+      "ui": { "order": 6, "depends_on": null }
+    },
+    {
+      "id": "pre_existing",
+      "type": "checkbox",
+      "label": "Any traveller has pre-existing condition?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "mandatory": false,
+      "ui": { "order": 7, "depends_on": null }
+    },
+    {
+      "id": "adventure_sports",
+      "type": "toggle",
+      "label": "Will you do adventure sports? (Skiing, Scuba, etc)",
+      "mandatory": false,
+      "ui": { "order": 8, "depends_on": null }
+    },
+    {
+      "id": "covid_cover",
+      "type": "toggle",
+      "label": "Include COVID-19 Cover?",
+      "mandatory": false,
+      "ui": { "order": 9, "depends_on": null }
+    },
+    {
+      "id": "missed_flight",
+      "type": "toggle",
+      "label": "Include Missed Flight/Connection Cover?",
+      "mandatory": false,
+      "ui": { "order": 10, "depends_on": null }
+    }
+  ]
+}

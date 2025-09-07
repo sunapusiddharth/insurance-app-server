@@ -1,0 +1,89 @@
+{
+  "insurance_type": "ulip_sip",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "investment_type",
+      "type": "radio",
+      "label": "Investment Type",
+      "options": [
+        { "value": "ulip", "label": "ULIP (Insurance + Investment)" },
+        { "value": "sip", "label": "SIP (Pure Investment)" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 1, "depends_on": null }
+    },
+    {
+      "id": "monthly_investment",
+      "type": "number",
+      "label": "Monthly Investment Amount (₹)",
+      "min": 1000,
+      "max": 1000000,
+      "mandatory": true,
+      "ui": { "order": 2, "depends_on": null }
+    },
+    {
+      "id": "tenure_years",
+      "type": "number",
+      "label": "Investment Tenure (Years)",
+      "min": 5,
+      "max": 30,
+      "mandatory": true,
+      "ui": { "order": 3, "depends_on": null }
+    },
+    {
+      "id": "risk_appetite",
+      "type": "select",
+      "label": "Risk Appetite",
+      "options": [
+        { "value": "low", "label": "Conservative (Debt Funds)" },
+        { "value": "medium", "label": "Balanced (Hybrid)" },
+        { "value": "high", "label": "Aggressive (Equity Funds)" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 4, "depends_on": null }
+    },
+    {
+      "id": "goal",
+      "type": "select",
+      "label": "Primary Investment Goal",
+      "options": [
+        { "value": "retirement", "label": "Retirement" },
+        { "value": "child_education", "label": "Child Education" },
+        { "value": "marriage", "label": "Marriage" },
+        { "value": "wealth_creation", "label": "Wealth Creation" }
+      ],
+      "mandatory": true,
+      "ui": { "order": 5, "depends_on": null }
+    },
+    {
+      "id": "existing_investments",
+      "type": "number",
+      "label": "Existing ULIP/SIP Investments (₹ per month)",
+      "min": 0,
+      "max": 500000,
+      "mandatory": false,
+      "ui": { "order": 6, "depends_on": null }
+    },
+    {
+      "id": "life_cover_needed",
+      "type": "toggle",
+      "label": "Need Life Cover with ULIP?",
+      "mandatory": false,
+      "ui": {
+        "order": 7,
+        "depends_on": {
+          "question_id": "investment_type",
+          "value": ["ulip"]
+        }
+      }
+    },
+    {
+      "id": "fund_switching",
+      "type": "toggle",
+      "label": "Want flexibility to switch funds later?",
+      "mandatory": false,
+      "ui": { "order": 8, "depends_on": null }
+    }
+  ]
+}
